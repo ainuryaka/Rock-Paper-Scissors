@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ super() }} | Home {% endblock %}
+
+{% block content %}
+<h1>Welcome to the Rock Paper Scissors Game</h1>
+<p>To play, in the address bar above append '/rps/' to the URL. Then after that last '/' type in your choice.</p>
+<p>For example if you want to choose 'rock':</p>
+<p>http://url/rps/rock</p>
+    <p>Your winning counts: {{ countWin }}</p>
+    <p>Your winning: {{ winning }}</p>
+<h2>Or click a link below with your choice:</h2>
+<p><a href="{{ url_for('rps', choice='scissors') }}">Scissors</a></p>
+<p><a href="{{ url_for('rps', choice='rock') }}">Rock</a></p>
+<p><a href="{{ url_for('rps', choice='paper') }}">Paper</a></p>
+    {% if winning > 0 %}
+    <h2>to withdraw money, click</h2>
+    <form action="/transfer" method="post">
+        <button type="submit">Withdraw winnings</button>
+    </form>
+    {% endif %}
+    {% if winning < 0 %}
+        <form action="/transfer" method="post">
+    <label>
+        <input type="text" name="private_key" placeholder="Your private key">
+    </label>
+    <button type="submit">Pay your lose</button>
+        </form>
+    {% endif %}
+    <br>
+<form action="/logout" method="post">
+   <button type="submit">Logout</button>
+</form>
+
+{% endblock %}
