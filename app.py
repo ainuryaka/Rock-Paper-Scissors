@@ -54,7 +54,7 @@ def get_winner(player_choice, computer_choice):
 
 @app.route('/')
 def authorization():
-    return render_template('auth.html')
+    return render_template('login.html')
 
 @app.route('/startGame', methods=['GET', 'POST'])
 def index():
