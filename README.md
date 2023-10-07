@@ -1,6 +1,7 @@
 # Rock-Paper-Scissors
 
-This Ethereum smart contract implements a secure Rock-Paper-Scissors game that's ready for deployment on the blockchain. Here's how the game works:
+Ethereum smart contract implements a secure Rock-Paper-Scissors game that's ready for deployment on the blockchain. 
+How the game works:
 
 - Two players can register and place bets.
 - Each player selects a move and a password, sending the hash of the combined string to the contract.
